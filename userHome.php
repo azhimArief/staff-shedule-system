@@ -50,10 +50,10 @@ include_once("navbar.php");
                     echo "<td>" . $row['desc'] . "</td>";
                     echo "<td>" . $row['update_date'] . "</td>";
                     echo "<td>
-                        <div class='btn-group   '>
+                        <div class='btn'>
                         <input name='id' type='hidden' value='" . $row['id'] . "';>
-                        <button type='button' class='btn btn-success' name='edit' value=''><span class='glyphicon glyphicon-pencil'></span> Edit</button>
-                        <button type='button' class='btn btn-danger' name='delete' value=''><span class='glyphicon glyphicon-trash'></span> Delete</button>
+                        <a class='btn btn-default' href='./edit.php?id= " .$row['id']. "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
+                        <a class='btn btn-danger' href='./delete.php?id= " .$row['id']. "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a>
                         </div>
                         </td>";
                     echo "</tr>";
@@ -77,7 +77,11 @@ include_once("navbar.php");
 
 <!-- if needed replacement 
 <form class='form-horizontal' method='post' action='tablelist.php'>
-
+                    <div class='btn-   '>
+                        <input name='id' type='hidden' value='" . $row['id'] . "';>
+                        <button type='button' class='btn btn-default' name='edit' value=''><span class='glyphicon glyphicon-pencil'></span> Edit</button>
+                        <button type='button' class='btn btn-danger' name='delete' value=''><span class='glyphicon glyphicon-trash'></span> Delete</button>
+                    </div>
             </form>
 -->
 
