@@ -52,8 +52,8 @@ include_once("navbar.php");
                     echo "<td>
                         <div class='btn'>
                         <input name='id' type='hidden' value='" . $row['id'] . "';>
-                        <a class='btn btn-default' href='./edit.php?id= " .$row['id']. "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
-                        <a class='btn btn-danger' href='./delete.php?id= " .$row['id']. "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+                        <a class='btn btn-default' href='./edit.php?id= " . $row['id'] . "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
+                        <a class='btn btn-danger' href='./delete.php?id= " . $row['id'] . "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a>
                         </div>
                         </td>";
                     echo "</tr>";
@@ -71,6 +71,7 @@ include_once("navbar.php");
 
     <div align="center">
         <br>
+        <a href=""><button type="text" class="btn btn-primary">New</button></a>
     </div>
     </div>
 </body>
