@@ -19,7 +19,7 @@ if (isset($_POST['hantar'])) {
 
 if ($con->query($sql) === TRUE) {
     echo   '<script type="text/javascript">
-                alert("Akiviti dimasukkan");
+                alert("Aktiviti dimasukkan");
                 location="userHome.php";
             </script>';
 } 
