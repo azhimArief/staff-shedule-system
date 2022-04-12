@@ -1,5 +1,6 @@
 <?php
 
+//kene tukar panggil ke connection file for safety. 
 $link = mysqli_connect("localhost", "root", "", "insertion");
 
 // Check connection
@@ -7,24 +8,17 @@ if ($link === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
+//Delete Query
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "DELETE FROM activity where id =  $id";
 }
 
-
 $result = mysqli_query($link, $sql);
+if ($result) {
+    echo '<script type="text/javascript">
+            alert("Schedule deleted");
+            location="userHome.php";
+        </script>';
+}
 
-
-// if(isset($_GET['delete'])){
-   
-//    if ($result) {
-//         echo '<script type="text/javascript">
-//         alert("deleted Schedule Added Successfully");
-//                 location="tb.php";
-//                 </script>';
-//    	    // echo 'deleted!';
-//    } else {
-//    	echo "not deleted!";
-//    }
-// } echo ".";
