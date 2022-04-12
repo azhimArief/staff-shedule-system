@@ -71,7 +71,7 @@ include_once("navbar.php");
 
     <div align="center">
         <br>
-        <a href=""><button type="text" class="btn btn-primary">New</button></a>
+        <a href="addScheduleView.php"><button type="text" class="btn btn-primary">New</button></a>
     </div>
     </div>
 </body>
