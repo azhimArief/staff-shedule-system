@@ -52,8 +52,8 @@ include_once("navbar.php");
                     echo "<td>
                         <div class='btn'>
                             <input name='id' type='hidden' value='" . $row['id'] . "';>
-                            <button class='btn btn-default'><a href='./editScheduleView.php?id= " . $row['id'] . "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a></button> 
-                            <button class='btn btn-danger'><a class='text-light' href='./deleteSchedule.php?id= " . $row['id'] . "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a></button>
+                            <a class='btn btn-default' href='./editScheduleView.php?id= " . $row['id'] . "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
+                            <a class='btn btn-danger' href='./deleteSchedule.php?id= " . $row['id'] . "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a>
                         </div>
                         </td>";
                     echo "</tr>";

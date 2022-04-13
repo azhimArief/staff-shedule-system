@@ -10,7 +10,6 @@ $con = mysqli_connect('localhost', 'root', '', 'insertion');
 //untuk panggil id yang nak edit
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo $id;
 } else {
     echo 'no id';
 }
@@ -19,6 +18,11 @@ if (isset($_GET['id'])) {
 $sql = "SELECT * FROM `activity` WHERE id = $id";
 $result = $con->query($sql);
 $data = $result->fetch_assoc();
+$icNo = $data['ic_no'];
+$name = $data['name'];
+$date = $data['date'];
+$activity = $data['desc'];
+
 ?>
 
 <html>
@@ -35,7 +39,7 @@ $data = $result->fetch_assoc();
 <body>
     <div class="content">
         <div class="form">
-            <form class="form-horizontal" action="editSchedule.php" method="post">
+            <form class="form-horizontal" method="post" action="EditSchedule.php">
                 <fieldset>
 
                     <legend>Edit Schedule Here</legend>
@@ -44,29 +48,29 @@ $data = $result->fetch_assoc();
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="ic">IC.No</label>
                         <div class="col-md-5">
-                            <input type="hidden" name="id" value="<? $data['id'] ?>">
-                            <input id="ic" name="ic" type="number" placeholder="" class="form-control input-md" value="<?= $data['ic_no'] ?>" required>
+                            <input type="hidden" name="id" id="id" value="<?php echo $data['id'] ?>">
+                            <input id="ic" name="ic" type="text" placeholder="" class="form-control input-md" value="<?php echo $data['ic_no'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="name">Nama</label>
                         <div class="col-md-5">
-                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" value="<?= $data['name'] ?>" required>
+                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" value="<?php echo $data['name'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
                         <div class="col-md-5">
-                            <input id="date" name="date" type="date" class="form-control input-md"  value="<?= $data['date'] ?>" required>
+                            <input id="date" name="date" type="date" class="form-control input-md" value="<?php echo $data['date'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="activity">Aktiviti</label>
                         <div class="col-md-5">
-                            <textarea name="activity" id="activity" cols="28" rows="3" class="form-control input-md" value="<?= $data['desc'] ?>" required><?= $data['desc'] ?></textarea>
+                            <input type="text" name="activity" id="activity" class="form-control-input" value="<?php echo $data['desc'] ?>">
                         </div>
                     </div>
 
@@ -76,9 +80,9 @@ $data = $result->fetch_assoc();
                             <input type="submit" name="update" id="update" class="btn btn-success" value="Kemaskini">
                         </div>
                     </div>
+                </fieldset>
+            </form>
         </div>
-        </fieldset>
-        </form>
     </div>
     <!-- <font color="grey">Already have an acount?</font> <a href="index.php">Login here </a> -->
     </div>
