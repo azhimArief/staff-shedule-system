@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 $result = mysqli_query($link, $sql);
 if ($result) {
     echo '<script type="text/javascript">
-            alert("Schedule deleted");
+            alert("Activity deleted");
             location="userHome.php";
         </script>';
 }

@@ -24,16 +24,16 @@ body {
 	
 	<div class="content">
 		<div class="form">
-		<form class="form-horizontal" method="post" action="checkUserLogin.php">
+		<form class="form-horizontal" method="post" action="login.php">
 			<fieldset>
 
-			<legend>Staff Login</legend>
+			<legend>Admin Login</legend>
 
 			
 			<br><div class="form-group">
-			  <label class="col-md-4 control-label" for="username">No. IC</label>  
+			  <label class="col-md-4 control-label" for="username">Username</label>  
 			  <div class="col-md-5">
-			  <input id="ic" name="ic" type="text" placeholder="" class="form-control input-md" required="">
+			  <input id="username" name="username" type="text" placeholder="" class="form-control input-md" required="">
 				
 			  </div>
 			</div>

@@ -22,7 +22,7 @@ include_once("header.php");
             <form class="form-horizontal" method="post" action="addSchedule.php">
                 <fieldset>
 
-                    <legend>Add Schedule Here</legend>
+                    <legend>Add Activity Here</legend>
 
                     <br>
                     <div class="form-group">

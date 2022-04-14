@@ -34,11 +34,4 @@
 .hover {
         border: 3px dashed red;
 }
-.sublist
-    {
-        display: table-cell;
-        padding-left: 15px;
-        padding-right: 15px;
-		padding-top: 0px;
-		padding-bottom: 0px;
-    }
+

@@ -19,7 +19,7 @@ if (isset($_POST['hantar'])) {
 
 if ($con->query($sql) === TRUE) {
     echo   '<script type="text/javascript">
-                alert("Aktiviti dimasukkan");
+                alert("Activity inserted!");
                 location="userHome.php";
             </script>';
 } 
@@ -27,13 +27,3 @@ else {
     echo 'not inserted';
 }
 
-
-
-// if (!mysqli_query($con, $sql)) {
-//     echo 'not registered';
-// } else {
-//     echo   '<script type="text/javascript">
-//                       alert("Akiviti dimasukkan");
-//                          location="userHome.php";
-//             </script>';
-// }

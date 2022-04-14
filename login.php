@@ -30,19 +30,19 @@ session_start();
 		 }
 		 else
 			 echo '<script type="text/javascript">
-                      alert("Wrong Password!");
-                         location="index.php";
+                      alert("Incorrect Password!");
+                         location="adminLogin.php";
                            </script>';
 	 }	 
 	 else
          die('<script type="text/javascript">
-                      alert("That user dont exist!");
-                         location="index.php";
+                      alert("The user does not exist!");
+                         location="adminLogin.php";
                            </script>');		 
 	  
   }
   else 
 	  die('<script type="text/javascript">
-                      alert("Please enter a username and password!");
+                      alert("Please enter an IC Number and password!");
                          location="tb.php";
                            </script>');

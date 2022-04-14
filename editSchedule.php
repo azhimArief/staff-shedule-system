@@ -29,7 +29,7 @@ if (isset($_POST['id'])) {
 
 if (mysqli_query($conn, $sql)) {
    echo '<script type="text/javascript">
-            alert("Schedule updated");
+            alert("Activity updated");
             location="userHome.php";
         </script>';
 } else {

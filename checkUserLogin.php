@@ -31,18 +31,12 @@ session_start();
 		 else
 			 echo '<script type="text/javascript">
                       alert("Wrong Password!");
-                         location="userLogin.php";
+                         location="index.php";
                            </script>';
 	 }	 
 	 else
          die('<script type="text/javascript">
-                      alert("That user dont exist!");
-                         location="userLogin.php";
-                           </script>');		 
-	  
+                      alert("That user does not exist!");
+                         location="index.php";
+                           </script>');		 	  
   }
-//   else 
-// 	  die('<script type="text/javascript">
-//                       alert("Please enter a username and password!");
-//                          location="tb.php";
-//                            </script>');
