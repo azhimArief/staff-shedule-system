@@ -3,6 +3,9 @@
 // $path .= "header.php";
 include_once("userNavbar.php");
 include_once("header.php");
+session_start();
+$idProfile = $_SESSION['ic'];
+$nameProfile = $_SESSION['name'];
 ?>
 
 <html>
@@ -28,7 +31,7 @@ include_once("header.php");
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="ic">IC.No</label>
                         <div class="col-md-5">
-                            <input id="ic" name="ic" type="number" placeholder="" class="form-control input-md" required="">
+                            <input id="ic" name="ic" type="number" placeholder="" class="form-control input-md" required="" value="<?php echo $idProfile ?>">
                             <small id="" class="form-text text-muted">Tanpa " - "</small>
                         </div>
                     </div>
@@ -36,7 +39,7 @@ include_once("header.php");
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="name">Nama</label>
                         <div class="col-md-5">
-                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $nameProfile ?>">
                         </div>
                     </div>
 

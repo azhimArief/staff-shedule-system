@@ -1,6 +1,9 @@
 <?php
 include_once("header.php");
 include_once("userNavbar.php");
+session_start();
+$idProfile = $_SESSION['ic'];
+
 ?>
 <html>
 
@@ -29,11 +32,10 @@ include_once("userNavbar.php");
                 //mysqli_select_db($connect,$database);
                 //or die(mysqli_error()); 
 
-                $query = ("SELECT * FROM activity");
+                $query = ("SELECT * FROM activity WHERE ic_no= '$idProfile'");
                 $result = mysqli_query($connect, $query);
                 echo "<div class='container'><table width='' class='table table-bordered' border='1' >
                             <tr>
-                                <th>No.</th>
 								<th>IC No</th>
                                 <th>Nama</th>
 								<th>Tarikh</th>
@@ -43,12 +45,14 @@ include_once("userNavbar.php");
                             </tr>";
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td>" . $row['id'] . "</td>";
                     echo "<td>" . $row['ic_no'] . "</td>";
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['date'] . "</td>";
                     echo "<td>" . $row['desc'] . "</td>";
                     echo "<td>" . $row['update_date'] . "</td>";
+                    //nk declare session for name
+                    $_SESSION['name'] = $row['name'];
+                    $nameProfile = $_SESSION['name'];
                     echo "<td>
                         <div class='btn'>
                             <input name='id' type='hidden' value='" . $row['id'] . "';>
