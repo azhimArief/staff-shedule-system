@@ -3,7 +3,11 @@
 // $path .= "header.php";
 include_once("userNavbar.php");
 include_once("header.php");
-session_start();
+//to check if session already started
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 $idProfile = $_SESSION['ic'];
 $nameProfile = $_SESSION['name'];
 $nameID = $_SESSION['nameID'];
