@@ -6,6 +6,7 @@ include_once("header.php");
 session_start();
 $idProfile = $_SESSION['ic'];
 $nameProfile = $_SESSION['name'];
+$nameID = $_SESSION['nameID'];
 ?>
 
 <html>
@@ -39,7 +40,7 @@ $nameProfile = $_SESSION['name'];
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="name">Nama</label>
                         <div class="col-md-5">
-                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $nameProfile ?>">
+                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $nameID ?>">
                         </div>
                     </div>
 

@@ -19,6 +19,7 @@ session_start();
 		 {
 			 $dbic = $row['ic'];
 			 $dbpassword = $row['password'];
+			 $dbname = $row['name'];
 		 }
 		 if ($ic==$dbic&&($password)==$dbpassword)
 		 {
@@ -26,7 +27,9 @@ session_start();
                       alert("Welcome User!");
                          location="userHome.php";
                            </script>';
-			 $_SESSION['ic'] = $ic;
+			 $_SESSION['ic'] = $dbic;
+			 $_SESSION['nameID'] = $dbname;
+
 		 }
 		 else
 			 echo '<script type="text/javascript">
