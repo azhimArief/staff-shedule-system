@@ -45,7 +45,7 @@ $activity = $data['desc'];
                     <legend>Edit Schedule Here</legend>
 
                     <br>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="col-md-4 control-label" for="ic">IC.No</label>
                         <div class="col-md-5">
                             <input type="hidden" name="id" id="id" value="<?php echo $data['id'] ?>">
@@ -58,7 +58,7 @@ $activity = $data['desc'];
                         <div class="col-md-5">
                             <input id="name" name="name" type="text" placeholder="" class="form-control input-md" value="<?php echo $data['name'] ?>">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>

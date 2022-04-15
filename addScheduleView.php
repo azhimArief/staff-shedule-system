@@ -33,7 +33,7 @@ $nameID = $_SESSION['nameID'];
                     <legend>Add Activity Here</legend>
 
                     <br>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="col-md-4 control-label" for="ic">IC.No</label>
                         <div class="col-md-5">
                             <input id="ic" name="ic" type="number" placeholder="" class="form-control input-md" required="" value="<?php echo $idProfile ?>">
@@ -46,7 +46,7 @@ $nameID = $_SESSION['nameID'];
                         <div class="col-md-5">
                             <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $nameID ?>">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
