@@ -43,19 +43,21 @@ $idProfile = $_SESSION['ic'];
 								<th>Tarikh</th>
                                 <th>Hari</th>
 								<th>Aktiviti</th>
-								<th>Tarikh Kemaskini</th>
                                 <th>Edit/Delete</th>
                             </tr>";
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
                     echo "<td>" . $row['ic_no'] . "</td>";
                     echo "<td>" . $row['name'] . "</td>";
-                    echo "<td>" . $row['date'] . "</td>";
+                    //nk display date susun d/m/y
+                    $orgDate = $row['date'];  
+                    $newDate = date("d-m-Y", strtotime($orgDate));  
+                    echo "<td>" . $newDate . "</td>";
+                    //nak display hari
                     $timestamp = strtotime($row['date']);
                     $day = date('l', $timestamp);
                     echo "<td>" . $day ."</td>";
                     echo "<td>" . $row['desc'] . "</td>";
-                    echo "<td>" . $row['update_date'] . "</td>";
                     //nk declare session for name
                     $_SESSION['name'] = $row['name'];
                     $nameProfile = $_SESSION['name'];
