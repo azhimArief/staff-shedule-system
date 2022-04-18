@@ -4,10 +4,9 @@
 include_once("userNavbar.php");
 include_once("header.php");
 //to check if session already started
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+if (!isset($_SESSION)) {
+    session_start();
+}
 $idProfile = $_SESSION['ic'];
 $nameProfile = $_SESSION['name'];
 $nameID = $_SESSION['nameID'];
@@ -33,20 +32,8 @@ $nameID = $_SESSION['nameID'];
                     <legend>Add Activity Here</legend>
 
                     <br>
-                    <!-- <div class="form-group">
-                        <label class="col-md-4 control-label" for="ic">IC.No</label>
-                        <div class="col-md-5">
-                            <input id="ic" name="ic" type="number" placeholder="" class="form-control input-md" required="" value="<?php echo $idProfile ?>">
-                            <small id="" class="form-text text-muted">Tanpa " - "</small>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">Nama</label>
-                        <div class="col-md-5">
-                            <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="" value="<?php echo $nameID ?>">
-                        </div>
-                    </div> -->
+                    <input id="ic" name="ic" type="hidden" placeholder="" class="form-control input-md" required="" value="<?php echo $idProfile ?>">
+                    <input id="name" name="name" type="hidden" placeholder="" class="form-control input-md" required="" value="<?php echo $nameID ?>">
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>

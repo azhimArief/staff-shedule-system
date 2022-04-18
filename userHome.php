@@ -1,10 +1,9 @@
 <?php
 include_once("header.php");
 include_once("userNavbar.php");
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
+if (!isset($_SESSION)) {
+    session_start();
+}
 $idProfile = $_SESSION['ic'];
 
 ?>
@@ -42,6 +41,7 @@ $idProfile = $_SESSION['ic'];
 								<th>IC No</th>
                                 <th>Nama</th>
 								<th>Tarikh</th>
+                                <th>Hari</th>
 								<th>Aktiviti</th>
 								<th>Tarikh Kemaskini</th>
                                 <th>Edit/Delete</th>
@@ -51,6 +51,9 @@ $idProfile = $_SESSION['ic'];
                     echo "<td>" . $row['ic_no'] . "</td>";
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['date'] . "</td>";
+                    $timestamp = strtotime($row['date']);
+                    $day = date('l', $timestamp);
+                    echo "<td>" . $day ."</td>";
                     echo "<td>" . $row['desc'] . "</td>";
                     echo "<td>" . $row['update_date'] . "</td>";
                     //nk declare session for name
