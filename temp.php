@@ -31,7 +31,7 @@ include_once("navbar.php");
                 //mysqli_select_db($connect,$database);
                 //or die(mysqli_error()); 
 
-                $query = ("SELECT * FROM activity");
+                $query = ("SELECT * FROM activity WHERE `date` BETWEEN '2022-04-18' AND '2022-04-22'");
                 $result = mysqli_query($connect, $query);
                 $query2 = ("SELECT * FROM user");
                 $result2 = mysqli_query($connect, $query2);
@@ -46,41 +46,20 @@ include_once("navbar.php");
                 echo            "<th>Khamis <br>" . $thursday = date('d-m-Y', strtotime('+' . (2 + $day) . ' days')) . "</th>";
                 echo            "<th>Jumaat <br>" . $friday = date('d-m-Y', strtotime('+' . (5 - $day) . ' days')) . "</th>";
                 echo       "</tr>";
-                $sum=0;
-                $sum2=0;
+
+                
                 while ($row = mysqli_fetch_array($result2)) {
-                    $sum2++;
-                    echo $sum2;
                     echo "<tr>";
                     echo "<td>" . $row['name'] . "</td>";
                     while ($row2 = mysqli_fetch_array($result)) {
-                        //loop satu kali je
                         if ($row2['name'] == $row['name']) {
-                            if ($row2['date'] == date('Y-m-d', strtotime('-' . (1 - $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (+$day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (1 + $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (2 + $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (5 - $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
+                            echo "<td>" . $row2['desc'] . "</td>";
                         } else {
-                            //$sum++;
-                            echo $sum;
                             echo "</tr>";
                         }
                     }
                 }
                 echo "</table>";
-                echo "</td>           
-        </tr>";
 
                 ?>
         </fieldset>
