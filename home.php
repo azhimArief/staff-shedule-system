@@ -31,56 +31,85 @@ include_once("navbar.php");
                 //mysqli_select_db($connect,$database);
                 //or die(mysqli_error()); 
 
-                $query = ("SELECT * FROM activity");
+                //untuk current minggu date for one week 
+                $monday = date('Y/m/d', strtotime("monday this week"));
+                $tuesday = date('Y/m/d', strtotime("tuesday this week"));
+                $wednesday = date('Y/m/d', strtotime("wednesday this week"));
+                $thursday = date('Y/m/d', strtotime("thursday this week"));
+                $friday = date('Y/m/d', strtotime("friday this week"));
+
+                $query = ("SELECT * FROM `activity` ORDER BY `name` DESC");
                 $result = mysqli_query($connect, $query);
-                $query2 = ("SELECT * FROM user");
+                $query2 = ("SELECT * FROM `user` ORDER BY `name` DESC;");
                 $result2 = mysqli_query($connect, $query2);
                 //for one week 
                 $day = date('w');
                 echo "<div class='container'><table width='' class='table table-bordered' border='1' >
-                            <tr>
+                            <tr>  
                                 <th>Nama</th>";
-                echo            "<th>Isnin <br>" . $monday = date('d-m-Y', strtotime('-' . (1 - $day) . ' days')) . "</th>";
-                echo            "<th>Selasa <br>" . $tuesday = date('d-m-Y', strtotime('+' . (+$day) . ' days')) . "</th>";
-                echo            "<th>Rabu <br>" . $wednesday = date('d-m-Y', strtotime('+' . (1 + $day) . ' days')) . "</th>";
-                echo            "<th>Khamis <br>" . $thursday = date('d-m-Y', strtotime('+' . (2 + $day) . ' days')) . "</th>";
-                echo            "<th>Jumaat <br>" . $friday = date('d-m-Y', strtotime('+' . (5 - $day) . ' days')) . "</th>";
+                echo            "<th>Isnin <br>" . $monday . "</th>";
+                echo            "<th>Selasa <br>" . $tuesday . "</th>";
+                echo            "<th>Rabu <br>" . $wednesday . "</th>";
+                echo            "<th>Khamis <br>" . $thursday . "</th>";
+                echo            "<th>Jumaat <br>" . $friday  . "</th>";
                 echo       "</tr>";
-                $sum=0;
-                $sum2=0;
-                while ($row = mysqli_fetch_array($result2)) {
-                    $sum2++;
-                    echo $sum2;
-                    echo "<tr>";
-                    echo "<td>" . $row['name'] . "</td>";
-                    while ($row2 = mysqli_fetch_array($result)) {
-                        //loop satu kali je
-                        if ($row2['name'] == $row['name']) {
-                            if ($row2['date'] == date('Y-m-d', strtotime('-' . (1 - $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (+$day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (1 + $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (2 + $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
-                            if ($row2['date'] == date('Y-m-d', strtotime('+' . (5 - $day) . ' days'))) {
-                                echo "<td>" . $row2['desc'] . "</td>";
-                            }
+
+                //Cara Lain
+                // $name = 'wan';
+                // $nameCount = 0;
+                // while ($row = mysqli_fetch_array($result)) {
+                //     if ($row['name'] != $name) {
+                //         $name = $row['name'];
+                //         $nameCount = 0;
+                //         echo "</tr>";
+                //     }
+                //     if ($nameCount == 0 && $row['name'] == $name) {
+                //         echo "<tr>";
+                //         echo "<td colspan='6' align='center'><h4>" . $row['name'] . "</h4></td>";
+                //         echo "</tr>";
+                //         echo "<tr>";
+                //         $nameCount++;
+                //     }
+                //     if ($row['name'] == $name) {
+                //         echo "<td>" . $row['desc'] . "</td>";
+                //     }
+                // }
+
+                $name = 'wan';
+                $nameCount = 0;
+                while ($row = mysqli_fetch_array($result)) {
+                    if ($row['name'] != $name) {
+                        $name = $row['name'];
+                        $nameCount = 0;
+                        echo "</tr>";
+                    }
+                    if ($nameCount == 0 && $row['name'] == $name) {
+                        echo "<tr>";
+                        echo "<td>" . $row['name'] . "</td>";
+                        //echo "</tr>";
+                        //echo "<tr>";
+                        $nameCount++;
+                    }
+                    if ($row['name'] == $name) {
+                        if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("monday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        } if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("tuesday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        } if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("wednesday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        }  if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("thursday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        }  if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
                         } else {
-                            //$sum++;
-                            echo $sum;
-                            echo "</tr>";
+                            echo "<td>-</td>";
                         }
                     }
                 }
+
+
+
                 echo "</table>";
-                echo "</td>           
-        </tr>";
 
                 ?>
         </fieldset>

@@ -63,7 +63,6 @@ $path .= "header.php";
                                     <!-- <label class="col-md-4 control-label" for="username">No. IC</label> -->
                                     <div class="col-md-5">
                                         <input id="ic" name="ic" type="text" placeholder="Masukkan Kad Pengenalan Anda" class="form-control input-md" required="">
-
                                     </div>
                                 </div>
 
