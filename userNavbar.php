@@ -4,6 +4,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 $name = $_SESSION['nameID'];
+$ic = $_SESSION['ic'];
 ?>
 
 <html>

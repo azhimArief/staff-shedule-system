@@ -38,7 +38,6 @@ $idProfile = $_SESSION['ic'];
                 $result = mysqli_query($connect, $query);
                 echo "<div class='container'><table width='' class='table table-bordered' border='1' >
                             <tr>
-								<th>IC No</th>
                                 <th>Nama</th>
 								<th>Tarikh</th>
                                 <th>Hari</th>
@@ -47,7 +46,6 @@ $idProfile = $_SESSION['ic'];
                             </tr>";
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
-                    echo "<td>" . $row['ic_no'] . "</td>";
                     echo "<td>" . $row['name'] . "</td>";
                     //nk display date susun d/m/y
                     $orgDate = $row['date'];  

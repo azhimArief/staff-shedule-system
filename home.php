@@ -38,7 +38,7 @@ include_once("navbar.php");
                 $thursday = date('Y/m/d', strtotime("thursday this week"));
                 $friday = date('Y/m/d', strtotime("friday this week"));
 
-                $query = ("SELECT * FROM `activity` ORDER BY `name` DESC");
+                $query = ("SELECT * FROM `activity` ORDER BY `date` AND `name` ASC");
                 $result = mysqli_query($connect, $query);
                 $query2 = ("SELECT * FROM `user` ORDER BY `name` DESC;");
                 $result2 = mysqli_query($connect, $query2);
@@ -93,13 +93,17 @@ include_once("navbar.php");
                     if ($row['name'] == $name) {
                         if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("monday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        } if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("tuesday this week"))) {
+                        }
+                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("tuesday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        } if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("wednesday this week"))) {
+                        }
+                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("wednesday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        }  if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("thursday this week"))) {
+                        }
+                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("thursday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        }  if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
+                        }
+                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
                         } else {
                             echo "<td>-</td>";
