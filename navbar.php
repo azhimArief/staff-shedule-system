@@ -18,7 +18,7 @@ include_once("header.php");
 
 <body>
 
-  <nav class="navbar sticky-top navbar-default">
+  <nav class="navbar sticky-top navbar navbar-light" style="background-color: #e3f2fd;"">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="home.php">

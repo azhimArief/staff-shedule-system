@@ -28,12 +28,14 @@ $activity = $data['desc'];
 <html>
 
 <head>
-    <style>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- <style>
         body {
             background-image: url();
             background-color: white;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -46,9 +48,9 @@ $activity = $data['desc'];
 
                     <br>
 
-                            <input type="hidden" name="id" id="id" value="<?php echo $data['id'] ?>">
-                            <input id="ic" name="ic" type="hidden" placeholder="" class="form-control input-md" value="<?php echo $data['ic_no'] ?>">
-                            <input id="name" name="name" type="hidden" placeholder="" class="form-control input-md" value="<?php echo $data['name'] ?>">
+                    <input type="hidden" name="id" id="id" value="<?php echo $data['id'] ?>">
+                    <input id="ic" name="ic" type="hidden" placeholder="" class="form-control input-md" value="<?php echo $data['ic_no'] ?>">
+                    <input id="name" name="name" type="hidden" placeholder="" class="form-control input-md" value="<?php echo $data['name'] ?>">
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
                         <div class="col-md-5">
@@ -64,7 +66,7 @@ $activity = $data['desc'];
                         </div>
                     </div>
 
-                    <div class="form-group" align="right">
+                    <div class="form-group">
                         <label class="col-md-4 control-label" for="hantar"></label>
                         <div class="col-md-5">
                             <input type="submit" name="update" id="update" class="btn btn-success" value="Kemaskini">

@@ -11,12 +11,13 @@ $idProfile = $_SESSION['ic'];
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body><br>
     <div align="center">
         <fieldset>
-            <legend>Senarai Akvititi</legend>
+            <legend>Senarai Akvititi Anda</legend>
 
             <body>
                 <?php
@@ -36,8 +37,8 @@ $idProfile = $_SESSION['ic'];
 
                 $query = ("SELECT * FROM activity WHERE ic_no= '$idProfile'");
                 $result = mysqli_query($connect, $query);
-                echo "<div class='container'><table width='' class='table table-bordered' border='1' >
-                            <tr>
+                echo "<div class='container'><table width='' class='table table-striped' border='0' >
+                            <tr class='success'>
                                 <th>Nama</th>
 								<th>Tarikh</th>
                                 <th>Hari</th>
@@ -48,19 +49,19 @@ $idProfile = $_SESSION['ic'];
                     echo "<tr>";
                     echo "<td>" . $row['name'] . "</td>";
                     //nk display date susun d/m/y
-                    $orgDate = $row['date'];  
-                    $newDate = date("d-m-Y", strtotime($orgDate));  
+                    $orgDate = $row['date'];
+                    $newDate = date("d-m-Y", strtotime($orgDate));
                     echo "<td>" . $newDate . "</td>";
                     //nak display hari
                     $timestamp = strtotime($row['date']);
                     $day = date('l', $timestamp);
-                    echo "<td>" . $day ."</td>";
+                    echo "<td>" . $day . "</td>";
                     echo "<td>" . $row['desc'] . "</td>";
                     //nk declare session for name
                     $_SESSION['name'] = $row['name'];
                     $nameProfile = $_SESSION['name'];
                     echo "<td>
-                        <div class='btn'>
+                        <div class=''>
                             <input name='id' type='hidden' value='" . $row['id'] . "';>
                             <a class='btn btn-default' href='./editScheduleView.php?id= " . $row['id'] . "' name='edit'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
                             <a class='btn btn-danger' href='./deleteSchedule.php?id= " . $row['id'] . "' name='delete'><span class='glyphicon glyphicon-trash'></span> Delete</a>

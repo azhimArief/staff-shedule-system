@@ -34,7 +34,7 @@ $ic = $_SESSION['ic'];
 
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a><span class="glyphicon glyphicon-user"> <?php echo $name ?></span></a></li>
+          <li><a><span class="glyphicon glyphicon-user"><i>Welcome(<?php echo $name ?>)</i></span></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="userHome.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>

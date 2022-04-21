@@ -1,19 +1,20 @@
 <?php
 include_once("header.php");
-include_once("navbar.php");
+include_once("tempNavbar.php");
 ?>
 
 
 <html>
 
 <head>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <br>
     <div align="center">
         <fieldset>
-            <legend>Senarai Akvititi Staf</legend>
+            <legend>Senarai Akvititi Staf PDSA</legend>
 
             <body>
                 <?php
@@ -34,24 +35,21 @@ include_once("navbar.php");
                 $result3 = mysqli_query($connect, $query3);
 
                 while ($row2 = mysqli_fetch_array($result3)) {
-                    $date = $row2['date'];
-                    $id = $row2['id'];
-                    if ($row2['date'] < date('Y/m/d', strtotime("monday this week")) && $row2['date'] > date('Y/m/d', strtotime("friday this week"))) {
-                        // $query4 = "DELETE FROM `activity` where `id` = $id";
-                        // $result4 = mysqli_query($connect, $query4);
-                        echo 'old data';
-                    } else {
-                        echo 'not old data';
+                    $date2 = $row2['date'];
+                    $id2 = $row2['id'];
+                    if (date('Y/m/d', strtotime($date2)) < date('Y/m/d', strtotime("monday this week")) == TRUE) {
+                        $query4 = "DELETE FROM `activity` where `id` = $id2";
+                        $result4 = mysqli_query($connect, $query4);
                     }
                 }
 
 
-                //untuk current minggu date for one week 
-                $monday = date('Y/m/d', strtotime("monday this week"));
-                $tuesday = date('Y/m/d', strtotime("tuesday this week"));
-                $wednesday = date('Y/m/d', strtotime("wednesday this week"));
-                $thursday = date('Y/m/d', strtotime("thursday this week"));
-                $friday = date('Y/m/d', strtotime("friday this week"));
+                //data untuk current minggu date for one week 
+                $monday = date('d/m/Y', strtotime("monday this week"));
+                $tuesday = date('d/m/Y', strtotime("tuesday this week"));
+                $wednesday = date('d/m/Y', strtotime("wednesday this week"));
+                $thursday = date('d/m/Y', strtotime("thursday this week"));
+                $friday = date('d/m/Y', strtotime("friday this week"));
 
                 $query = ("SELECT * FROM `activity` ORDER BY `name` DESC, `date` ASC");
                 $result = mysqli_query($connect, $query);
@@ -59,8 +57,8 @@ include_once("navbar.php");
                 $result2 = mysqli_query($connect, $query2);
                 //for one week 
                 $day = date('w');
-                echo "<div class='container'><table width='' class='table table-bordered' border='1' >
-                            <tr>  
+                echo "<div class='container'><table width='' class='table table-hover' border='0.9' >
+                            <tr class='info'>  
                                 <th>Nama</th>";
                 echo            "<th>Isnin <br>" . $monday . "</th>";
                 echo            "<th>Selasa <br>" . $tuesday . "</th>";
@@ -101,8 +99,6 @@ include_once("navbar.php");
                     if ($nameCount == 0 && $row['name'] == $name) {
                         echo "<tr>";
                         echo "<td>" . $row['name'] . "</td>";
-                        //echo "</tr>";
-                        //echo "<tr>";
                         $nameCount++;
                     }
                     if ($row['name'] == $name) {
@@ -119,9 +115,6 @@ include_once("navbar.php");
                         }
                     }
                 }
-
-
-
                 echo "</table>";
 
                 ?>

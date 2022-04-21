@@ -15,16 +15,13 @@ $nameID = $_SESSION['nameID'];
 <html>
 
 <head>
-    <style>
+    <link rel="stylesheet" href="main.css">
+    <!-- <style>
         body {
             background-image: url();
             background-color: white;
         }
-
-        h5 {
-            font-weight: 600;
-        }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -33,7 +30,7 @@ $nameID = $_SESSION['nameID'];
             <form class="form-horizontal" method="post" action="addSchedule.php">
                 <fieldset>
 
-                    <legend>Add Activity Here</legend>
+                    <legend>Add Schedule</legend>
 
                     <br>
                     <input id="ic" name="ic" type="hidden" placeholder="" class="form-control input-md" required="" value="<?php echo $idProfile ?>">
@@ -56,7 +53,7 @@ $nameID = $_SESSION['nameID'];
                         </div>
                     </div>
 
-                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <hr style="height:2px;border-width:0;border-top: 1px dashed red;">
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
@@ -75,7 +72,7 @@ $nameID = $_SESSION['nameID'];
                         </div>
                     </div>
 
-                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <hr style="height:2px;border-width:0;border-top: 1px dashed red;">
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
@@ -94,7 +91,7 @@ $nameID = $_SESSION['nameID'];
                         </div>
                     </div>
 
-                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <hr style="height:2px;border-width:0;border-top: 1px dashed red;">
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
@@ -113,7 +110,7 @@ $nameID = $_SESSION['nameID'];
                         </div>
                     </div>
 
-                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <hr style="height:2px;border-width:0;border-top: 1px dashed red;">
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
