@@ -52,7 +52,8 @@ $activity = $data['desc'];
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="date">Tarikh</label>
                         <div class="col-md-5">
-                            <input id="date" name="date" type="date" class="form-control input-md" value="<?php echo $data['date'] ?>">
+                            <h5><?php echo $data['date'];  ?></h5>
+                            <input id="date" name="date" type="hidden" class="form-control input-md" value="<?php echo $data['date'] ?>">
                         </div>
                     </div>
 

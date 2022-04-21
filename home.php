@@ -105,9 +105,7 @@ include_once("navbar.php");
                         }
                         else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        } else {
-                            echo "<td>-</td>";
-                        }
+                        } 
                     }
                 }
 
