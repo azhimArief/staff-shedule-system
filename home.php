@@ -27,9 +27,24 @@ include_once("navbar.php");
 
                 // select database
                 $connect = mysqli_connect($host, $username, $password, $database);
-                //or die(mysqli_error()); 
-                //mysqli_select_db($connect,$database);
-                //or die(mysqli_error()); 
+
+
+                //Tuk clean up data yang lama
+                $query3 = ("SELECT * FROM `activity` ORDER BY `name` DESC");
+                $result3 = mysqli_query($connect, $query3);
+
+                while ($row2 = mysqli_fetch_array($result3)) {
+                    $date = $row2['date'];
+                    $id = $row2['id'];
+                    if ($row2['date'] < date('Y/m/d', strtotime("monday this week")) && $row2['date'] > date('Y/m/d', strtotime("friday this week"))) {
+                        // $query4 = "DELETE FROM `activity` where `id` = $id";
+                        // $result4 = mysqli_query($connect, $query4);
+                        echo 'old data';
+                    } else {
+                        echo 'not old data';
+                    }
+                }
+
 
                 //untuk current minggu date for one week 
                 $monday = date('Y/m/d', strtotime("monday this week"));
@@ -38,7 +53,7 @@ include_once("navbar.php");
                 $thursday = date('Y/m/d', strtotime("thursday this week"));
                 $friday = date('Y/m/d', strtotime("friday this week"));
 
-                $query = ("SELECT * FROM `activity` ORDER BY `date` AND `name` ASC");
+                $query = ("SELECT * FROM `activity` ORDER BY `name` DESC, `date` ASC");
                 $result = mysqli_query($connect, $query);
                 $query2 = ("SELECT * FROM `user` ORDER BY `name` DESC;");
                 $result2 = mysqli_query($connect, $query2);
@@ -93,19 +108,15 @@ include_once("navbar.php");
                     if ($row['name'] == $name) {
                         if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("monday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
-                        }
-                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("tuesday this week"))) {
+                        } else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("tuesday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        } else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("wednesday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        } else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("thursday this week"))) {
+                            echo "<td>" . $row['desc'] . "</td>";
+                        } else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
                         }
-                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("wednesday this week"))) {
-                            echo "<td>" . $row['desc'] . "</td>";
-                        }
-                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("thursday this week"))) {
-                            echo "<td>" . $row['desc'] . "</td>";
-                        }
-                        else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
-                            echo "<td>" . $row['desc'] . "</td>";
-                        } 
                     }
                 }
 
