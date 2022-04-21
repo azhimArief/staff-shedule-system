@@ -15,15 +15,15 @@ $ic = $_SESSION['ic'];
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- <style>
-    body {
-      position: fixed;
+    nav {
+      background-color: #8EE4AF;
     }
   </style> -->
 </head>
 
 <body>
 
-  <nav class="navbar sticky-top navbar-default">
+  <nav class="navbar sticky-top navbar navbar-light" style="background-color: #CAFAFE;">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="userHome.php">
