@@ -1,7 +1,7 @@
 <?php
 // $path = $_SERVER['DOCUMENT_ROOT'];
 // $path .= "header.php";
-include_once("userNavbar.php");
+include_once("userSidebar.php");
 include_once("header.php");
 //to check if session already started
 if (!isset($_SESSION)) {

@@ -1,20 +1,22 @@
 <?php
+include_once("sidebar.php");
 include_once("header.php");
-include_once("tempNavbar.php");
-?>
+//include_once("tempNavbar.php");
 
+?>
 
 <html>
 
 <head>
     <link rel="stylesheet" href="main.css">
+    
 </head>
 
 <body>
     <br>
     <div align="center">
         <fieldset>
-            <legend>Senarai Akvititi Staf PDSA</legend>
+            <legend><h3>Senarai Akvititi Staf PDSA</h3></legend>
 
             <body>
                 <?php

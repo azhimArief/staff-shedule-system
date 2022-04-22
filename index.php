@@ -22,9 +22,9 @@ $path .= "header.php";
     <link href="style3.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url(assets/img/header-bg.jpg);
+            background-image: url(assets/img/bg.png);
             background-color: white;
-            background-size: auto;
+            background-size: cover;
         }
     </style>
 </head>
@@ -33,7 +33,7 @@ $path .= "header.php";
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href=""><img src="assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -46,7 +46,7 @@ $path .= "header.php";
         <div class="container">
             <div class="form-group">
                 <h2>
-                    <font color=blue>SISTEM PERGERAKAN</font> </em>
+                    <font color=lightblue>SISTEM PERGERAKAN</font> </em>
                     <font color=red>PEGAWAI PDSA
                 </h2>
                 </font>
@@ -62,10 +62,9 @@ $path .= "header.php";
                                 <div class="form-group">
                                     <!-- <label class="col-md-4 control-label" for="username">No. IC</label> -->
                                     <div class="col-md-5">
-                                        <input id="ic" name="ic" type="text" placeholder="Masukkan Kad Pengenalan Anda" class="form-control input-md" required="">
+                                        <input id="ic" name="ic" type="text" placeholder="Masukkan Kad Pengenalan Anda (Tanpa - )" class="form-control input-md" required="">
                                     </div>
                                 </div>
-
 
                                 <!-- <div class="form-group">
                                     <br>

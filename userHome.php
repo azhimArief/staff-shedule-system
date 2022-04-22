@@ -1,6 +1,7 @@
 <?php
 include_once("header.php");
-include_once("userNavbar.php");
+//include_once("userNavbar.php");
+include_once("userSidebar.php");
 if (!isset($_SESSION)) {
     session_start();
 }

@@ -22,9 +22,9 @@ $path .= "header.php";
     <link href="style3.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url(assets/img/header-bg.jpg);
+            background-image: url(assets/img/bg.png);
             background-color: white;
-            background-size: auto;
+            background-size: cover;
         }
     </style>
 </head>
@@ -46,7 +46,7 @@ $path .= "header.php";
         <div class="container">
             <div class="form-group">
                 <h2>
-                    <font color=blue>SISTEM PERGERAKAN</font> </em>
+                    <font color=lightblue>SISTEM PERGERAKAN</font> </em>
                     <font color=red>PEGAWAI PDSA
                 </h2>
                 </font>
