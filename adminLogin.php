@@ -22,7 +22,7 @@ $path .= "header.php";
     <link href="style3.css" rel="stylesheet" />
     <style>
         body {
-            background-image: url(assets/img/bg.png);
+            background-image: url(assets/img/bg.jpg);
             background-color: white;
             background-size: cover;
         }

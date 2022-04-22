@@ -33,7 +33,7 @@
 
                 <div class="text logo-text">
                     <span class="name">PDSA</span>
-                    <span class="profession">Sistem Pergerakan Pegawai</span>
+                    <p><span class="profession">Sistem Pergerakan <br> Pegawai</span></p>
                 </div>
             </div>
 

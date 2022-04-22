@@ -134,7 +134,7 @@ $nameID = $_SESSION['nameID'];
                     <div class="form-group" align="right">
                         <label class="col-md-4 control-label" for="hantar"></label>
                         <div class="col-md-5">
-                            <input type="submit" name="hantar" class="btn btn-success" value="Hantar">
+                            <input type="submit" name="hantar" class="btn btn-success" value="Submit">
                         </div>
                     </div>
                     <hr>

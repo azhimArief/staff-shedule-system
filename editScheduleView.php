@@ -69,7 +69,7 @@ $activity = $data['desc'];
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="hantar"></label>
                         <div class="col-md-5">
-                            <input type="submit" name="update" id="update" class="btn btn-success" value="Kemaskini">
+                            <input type="submit" name="update" id="update" class="btn btn-success" value="Update">
                         </div>
                     </div>
                 </fieldset>

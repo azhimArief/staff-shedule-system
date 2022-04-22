@@ -1,7 +1,7 @@
 <?php
 include_once("header.php");
 if (!isset($_SESSION)) {
-  session_start();
+    session_start();
 }
 $name = $_SESSION['nameID'];
 $ic = $_SESSION['ic'];
@@ -22,7 +22,6 @@ $ic = $_SESSION['ic'];
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="sidebarStyle.css">
-    <link rel="stylesheet" href="main.css">
 
 
     <!----===== Boxicons CSS ===== -->
@@ -42,6 +41,7 @@ $ic = $_SESSION['ic'];
                 <div class="text logo-text">
                     <span class="name">PDSA</span>
                     <span class="profession">Sistem Pergerakan Pegawai</span>
+                    <span class="profession">Welcome <b><?php echo $name ?></b></span>
                 </div>
             </div>
 
