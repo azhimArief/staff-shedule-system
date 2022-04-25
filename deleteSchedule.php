@@ -17,7 +17,6 @@ if (isset($_GET['id'])) {
 $result = mysqli_query($link, $sql);
 if ($result) {
     echo '<script type="text/javascript">
-            alert("Activity deleted");
             location="userHome.php";
         </script>';
 }

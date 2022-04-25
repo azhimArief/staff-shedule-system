@@ -33,7 +33,7 @@ include_once("header.php");
 
 
                 //Tuk clean up data yang lama
-                $query3 = ("SELECT * FROM `activity` ORDER BY `name` DESC");
+                $query3 = ("SELECT * FROM `activity` ORDER BY `name`, `date` DESC");
                 $result3 = mysqli_query($connect, $query3);
 
                 while ($row2 = mysqli_fetch_array($result3)) {
@@ -114,6 +114,8 @@ include_once("header.php");
                             echo "<td>" . $row['desc'] . "</td>";
                         } else if (date('Y/m/d', strtotime($row['date'])) == date('Y/m/d', strtotime("friday this week"))) {
                             echo "<td>" . $row['desc'] . "</td>";
+                        } else {
+                            echo "<td> - </td>";
                         }
                     }
                 }

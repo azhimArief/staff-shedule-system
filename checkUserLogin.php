@@ -22,7 +22,6 @@ session_start();
 		 if ($ic==$dbic)
 		 {
 			  echo '<script type="text/javascript">
-                      alert("Welcome User!");
                          location="userHome.php";
                            </script>';
 			 $_SESSION['ic'] = $dbic;

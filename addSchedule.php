@@ -68,7 +68,6 @@ if (isset($_POST['hantar'])) {
 
 if ($con->query($sql1) === TRUE && $con->query($sql2) === TRUE && $con->query($sql3) === TRUE && $con->query($sql4) === TRUE && $con->query($sql5) === TRUE) {
     echo   '<script type="text/javascript">
-                alert("Activity inserted!");
                 location="userHome.php";
             </script>';
 } else {

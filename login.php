@@ -17,7 +17,6 @@ if ($username) {
 		}
 		if ($username == $dbusername) {
 			echo '<script type="text/javascript">
-                      alert("Welcome Admin!");
                          location="home.php";
                            </script>';
 			$_SESSION['username'] = $username;

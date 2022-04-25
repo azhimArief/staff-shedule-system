@@ -44,7 +44,7 @@ $idProfile = $_SESSION['ic'];
 								<th>Tarikh</th>
                                 <th>Hari</th>
 								<th>Aktiviti</th>
-                                <th>Edit/Delete</th>
+                                <th>Tindakan</th>
                             </tr>";
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
@@ -83,7 +83,7 @@ $idProfile = $_SESSION['ic'];
 
     <div align="center">
         <br>
-        <a href="addScheduleView.php"><button type="text" class="btn btn-primary">New</button></a>
+        <a href="addScheduleView.php"><button type="text" class="btn btn-primary">Tambah</button></a>
     </div>
     </div>
 </body>
